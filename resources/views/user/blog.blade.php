@@ -14,7 +14,7 @@
             <h1 class="search">SEARCH</h1>
             <div class="search_box">
                 <form action="/blog" >
-                    <input type="text" class="input" placeholder="search..." name="search">
+                    <input type="text" class="input" placeholder="search..." name="search" value="{{old('search')}}">>
                     <button type="submit" class="btn">Search</button>
                 </form>
             </div>

@@ -22,8 +22,8 @@
             <a href=""><i class="fas fa-user-alt"></i></a>
         </div>
         <div class="sosmed">
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/smkn1sumedang.official/"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </div>
