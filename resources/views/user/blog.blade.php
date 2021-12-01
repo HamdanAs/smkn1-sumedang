@@ -63,3 +63,4 @@
 @section('footer')
     <x-footer/>
 @endsection
+

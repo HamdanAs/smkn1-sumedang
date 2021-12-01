@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Panggil Controller Disini yah ...
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,9 @@ Route::get('/', function () {
 Route::get('/blog', [BlogController::class, 'index']);
 Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
 
-Route::get('/profile', [BlogController::class, 'index']);
-Route::get('/profile/history', [HistoryController::class, 'index']);
-Route::get('/profile/vision', [VisionController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/profile/history', [ProfileController::class, 'history']);
+Route::get('/profile/vision', [ProfileController::class, 'vision']);
 
 Route::get('/admin', function () {
     return view('admin.dashboard');

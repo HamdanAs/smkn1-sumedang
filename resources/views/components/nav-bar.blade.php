@@ -7,10 +7,10 @@
     <div class="navbar">
         <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="/profile">PROFIL SEKOLAH <i class="fas fa-caret-down"></i></a>
+            <li><a href="#">PROFIL SEKOLAH <i class="fas fa-caret-down"></i></a>
                 <ul>
-                    <li><a href="/history">Sejarah sekolah</a></li>
-                    <li><a href="/vision">Visi & misi</a></li>
+                    <li><a href="/profile/history">Sejarah sekolah</a></li>
+                    <li><a href="/profile/vision">Visi & misi</a></li>
                 </ul>
             </li>
             <li><a href="/jurusan">KOMPETENSI KEAHLIAN</a></li>
