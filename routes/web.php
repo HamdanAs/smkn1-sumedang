@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Panggil Controller Disini yah ...
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FamilyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +26,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
 
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/history', [ProfileController::class, 'history']);
 Route::get('/profile/vision', [ProfileController::class, 'vision']);
+
+
+Route::get('/families', [FamilyController::class, 'index']);
+
 
 Route::get('/admin', function () {
     return view('admin.dashboard');

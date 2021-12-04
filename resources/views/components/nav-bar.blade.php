@@ -21,7 +21,7 @@
                     <li><a href="/galerry">Gallery</a></li>
                 </ul>
             </li>
-            <li><a href="/teachers">GURU</a></li>
+            <li><a href="/families">GURU</a></li>
             <li><a href="/contact">KONTAK</a></li>
         </ul> 
     </div>

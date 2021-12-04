@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
-use Illuminate\Http\Request;
+use App\Models\familyRole;
+use App\Http\Requests\StorefamilyRoleRequest;
+use App\Http\Requests\UpdatefamilyRoleRequest;
 
-class BlogController extends Controller
+class FamilyRoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = blog::latest();
-
-        if (request('search')) {
-            $blogs->where('title', 'like' , '%' . request('search') .'%');
-        }
-        
-        return view('user.blogs',[
-            'blogs' => $blogs->simplePaginate(5),
-            'title' => "Blog",
-            // 'blogs' => Blog::simplePaginate(5),
-        ]);
+        //
     }
 
     /**
@@ -40,10 +31,10 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorefamilyRoleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorefamilyRoleRequest $request)
     {
         //
     }
@@ -51,24 +42,21 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\familyRole  $familyRole
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(familyRole $familyRole)
     {
-        return view('user.single-blog', [
-            'blog' => $blog,
-            'title' => $blog->title,
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\familyRole  $familyRole
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(familyRole $familyRole)
     {
         //
     }
@@ -76,11 +64,11 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Http\Requests\UpdatefamilyRoleRequest  $request
+     * @param  \App\Models\familyRole  $familyRole
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(UpdatefamilyRoleRequest $request, familyRole $familyRole)
     {
         //
     }
@@ -88,10 +76,10 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Blog  $blog
+     * @param  \App\Models\familyRole  $familyRole
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(familyRole $familyRole)
     {
         //
     }

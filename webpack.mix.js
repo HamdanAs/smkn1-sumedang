@@ -16,3 +16,7 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
+
+
+//auto refresh change on laravel
+mix.browserSync('127.0.0.1:8000');
