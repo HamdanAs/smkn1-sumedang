@@ -36,6 +36,9 @@ Route::get('/profile/vision', [ProfileController::class, 'vision']);
 Route::get('/families', [FamilyController::class, 'index']);
 
 
+Route::get('/jurusan', [JurusanController::class, 'index']);
+
+
 Route::get('/admin', function () {
     return view('admin.dashboard');
 })->middleware(['auth'])->name('dashboard');

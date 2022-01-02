@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Blog;
+use App\Models\Family;
 
 class HomeController extends Controller
 {
@@ -13,8 +15,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        
         return view('user.index' , [
-            'title' => 'Home'
+            'title' => 'Home',
+            'blogs' => blog::latest(),
+            'families' => family::latest(),
+
         ]);
     }
 
