@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::get('/profile/vision', [ProfileController::class, 'vision']);
 
 Route::get('/families', [FamilyController::class, 'index']);
 
+Route::get('/gallery', [GalleryController::class, 'index']);
 
 Route::get('/jurusan', [JurusanController::class, 'index']);
 

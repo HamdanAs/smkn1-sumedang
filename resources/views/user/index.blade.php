@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/css/style.css">
 @endsection
 @section('nav-bar')
-    {{-- <x-nav-bar/> --}}
+    <x-nav-bar/>
 @endsection
 
 @section('content')
