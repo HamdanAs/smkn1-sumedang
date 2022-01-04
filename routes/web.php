@@ -38,7 +38,7 @@ Route::get('/families', [FamilyController::class, 'index']);
 
 
 Route::get('/admin', function () {
-    return view('admin.dashboard');
+    return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

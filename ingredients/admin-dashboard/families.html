@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/img/icons/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav id="nav">
+        <ul class="nav-list">
+          <li class="logo">
+            <a href="" class="nav-link">
+              <img src="./assets/img/logosmk.png" alt="" />
+              <span class="nav-text">SMKN 1 SUMEDANG</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="nav-link">
+              <i class="fas fa-home"></i>
+              <span class="nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="nav-link">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <span class="nav-text">Families</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="nav-link">
+              <i class="fas fa-school"></i>
+              <span class="nav-text">School Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="nav-link">
+              <i class="fas fa-blog"></i>
+              <span class="nav-text">Blog Contents</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <div class="topbar">
+          <div class="toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="search">
+            <label for="">
+              <input type="text" placeholder="Search..." />
+              <i class="fas fa-search"></i>
+            </label>
+          </div>
+          <div class="user">
+            <img src="./assets/img/user.png" alt="" srcset="" />
+          </div>
+        </div>
+
+        <div class="card-box" style="--column: 3">
+          <div class="card">
+            <div>
+              <div class="numbers">1,500</div>
+              <div class="card-name">Daily Views</div>
+            </div>
+            <div class="icon-box">
+              <i class="fas fa-eye"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="numbers">59</div>
+              <div class="card-name">Blog Posts</div>
+            </div>
+            <div class="icon-box">
+              <i class="fas fa-blog"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div>
+              <div class="numbers">500</div>
+              <div class="card-name">Families</div>
+            </div>
+            <div class="icon-box">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="details">
+          <!-- School Profile Summary -->
+          <div class="school-profile">
+            <div class="card-header">
+              <h2>School Profile Summary</h2>
+              <a href="" class="btn">View All</a>
+            </div>
+
+            <div class="card-box" style="--row: 3">
+              <div class="card">
+                <div>
+                  <div class="subtitle">History</div>
+                  <div class="card-name">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Illum quia dolorem recusandae aspernatur commodi quod!
+                  </div>
+                </div>
+                <div class="icon-box">
+                  <i class="fas fa-landmark"></i>
+                </div>
+              </div>
+              <div class="card">
+                <div>
+                  <div class="subtitle">Vission</div>
+                  <div class="card-name">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+                    expedita saepe, minima nesciunt eligendi voluptatibus.
+                  </div>
+                </div>
+                <div class="icon-box">
+                  <i class="fas fa-blog"></i>
+                </div>
+              </div>
+              <div class="card">
+                <div>
+                  <div class="subtitle">Mission</div>
+                  <div class="card-name">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consequuntur aliquid, omnis exercitationem ipsam corrupti
+                    repellendus!
+                  </div>
+                </div>
+                <div class="icon-box">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      let toggle = document.querySelector(".toggle");
+      let nav = document.querySelector("#nav");
+      let main = document.querySelector("main");
+
+      toggle.onclick = function () {
+        nav.classList.toggle("active");
+        main.classList.toggle("active");
+      };
+
+      let list = document.querySelectorAll("#nav .nav-list li");
+      function activeLink() {
+        list.forEach((item) => {
+          this.classList.add("hovered");
+          item.classList.remove("hovered");
+        });
+      }
+
+      list.forEach((item) => {
+        item.addEventListener("mouseover", activeLink);
+      });
+    </script>
+  </body>
+</html>

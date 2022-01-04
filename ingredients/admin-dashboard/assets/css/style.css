@@ -1,0 +1,517 @@
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --nav-size: 300;
+
+  --blue: #5865f2;
+  --brown: #582812;
+  --pink: #eb459e;
+  --yellow: #fee75c;
+  --green: #57f287;
+  --white: #ffffff;
+  --second-blue: #6998ab;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+nav.active {
+  width: 80px;
+}
+
+nav ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+nav ul li:hover,
+nav ul li.hovered {
+  background-color: var(--white);
+}
+
+nav ul li.logo {
+  margin-left: -10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+nav ul li.logo .nav-link {
+  font-size: 1.8em;
+  font-weight: 600;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav ul li.logo .nav-link img {
+  width: 80px;
+  transition: 0.5s;
+}
+
+nav.active ul li.logo {
+  margin-left: -4px;
+}
+
+nav.active ul li.logo .nav-link img {
+  width: 40px;
+  transition: 0.5s;
+}
+
+nav.active ul li.logo .nav-link .nav-text {
+  display: none;
+}
+
+nav ul li .nav-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+nav ul li:hover a,
+nav ul li.hovered a {
+  color: var(--blue);
+}
+
+nav ul li .nav-link i {
+  position: relative;
+  display: block;
+  min-width: 64px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.75em;
+}
+
+nav ul li .nav-link .nav-text {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+
+/* Curve position */
+
+nav ul li:hover .nav-link::before,
+nav ul li.hovered .nav-link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+}
+
+nav ul li:hover .nav-link::after,
+nav ul li.hovered .nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+}
+
+/* main */
+main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background-color: var(--white);
+  transition: 0.5s;
+}
+
+main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  outline: none;
+  border: 1px solid var(--brown);
+}
+
+.search label i {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2em;
+}
+
+.user {
+  position: relative;
+  min-width: 40px;
+  height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-box {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(var(--column), 1fr);
+  grid-template-rows: repeat(var(--row), 1fr);
+  gap: 30px;
+}
+
+.card-box .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(5, 4, 4, 0.08);
+}
+
+.card-box .card .numbers {
+  position: relative;
+  font-weight: 600;
+  font-size: 2.5em;
+  color: var(--blue);
+}
+
+.card-box .card .card-name {
+  opacity: 0.9;
+  margin-top: 5px;
+  font-size: 1.1em;
+}
+
+.card-box .card .icon-box {
+  font-size: 3.5em;
+  color: var(--blue);
+}
+
+.card-box .card:hover {
+  background: var(--blue);
+}
+
+.card-box .card:hover .numbers,
+.card-box .card:hover .card-name,
+.card-box .card:hover .icon-box {
+  color: var(--white);
+}
+
+.details {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.details .school-profile {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  background-color: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.details .agenda {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  background-color: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-header h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.btn {
+  position: relative;
+  padding: 5px 10px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 8px;
+}
+
+.details .school-profile .card {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
+}
+
+.details .school-profile .card .subtitle {
+  font-size: 1.5em;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.details .school-profile .card:hover .subtitle {
+  color: var(--white);
+}
+
+.details .school-profile .card .icon-box {
+  min-width: 100px;
+}
+
+.details .table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.details .table thead td {
+  font-weight: 600;
+}
+
+.details .school-profile table tr {
+  color: var(--brown);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .school-profile table tr:last-child {
+  border-bottom: none;
+}
+
+.details .school-profile table tr:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.details .school-profile table tr td {
+  padding: 10px;
+}
+
+.details .school-profile table tr td:last-child {
+  text-align: right;
+}
+
+.details .school-profile table tr td:nth-child(2) {
+  text-align: end;
+}
+
+.details .school-profile table tr td:nth-child(3) {
+  text-align: center;
+}
+
+.status {
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status.delivered {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.status.pending {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.status.return {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.status.progress {
+  background-color: var(--second-blue);
+  color: var(--white);
+}
+
+.details .agenda .card {
+  flex-direction: column;
+}
+
+.details .agenda .card .date {
+  font-size: 1.3em;
+  color: var(--blue);
+}
+
+.details .agenda .card .content {
+  font-size: 1.3em;
+  padding: 3px 6px;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 10px;
+}
+
+/* responsive */
+@media (max-width: 991px) {
+  nav {
+    left: -300px;
+  }
+
+  main {
+    width: 100%;
+    left: 0;
+  }
+
+  main.active {
+    left: 300px;
+  }
+
+  nav.active {
+    left: 0;
+    width: 300px;
+  }
+
+  .card-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .school-profile {
+    overflow-x: scroll;
+  }
+
+  .status.progress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-box {
+    grid-template-columns: 1fr;
+  }
+
+  .card-box h2 {
+    font-size: 20px;
+  }
+
+  .user {
+    min-width: 40px;
+  }
+
+  nav {
+    width: 100%;
+    left: -100%;
+    z-index: 999;
+  }
+
+  nav.active {
+    width: 100%;
+    left: 0;
+  }
+
+  .toggle {
+    z-index: 1000;
+  }
+
+  main.active .toggle {
+    position: fixed;
+    right: 0;
+    color: white;
+  }
+}
