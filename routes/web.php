@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FamilyController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +24,7 @@ use App\Http\Controllers\FamilyController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blog/{blog:slug}', [BlogController::class, 'show']);
@@ -35,6 +35,10 @@ Route::get('/profile/vision', [ProfileController::class, 'vision']);
 
 
 Route::get('/families', [FamilyController::class, 'index']);
+
+Route::get('/gallery', [GalleryController::class, 'index']);
+
+Route::get('/jurusan', [JurusanController::class, 'index']);
 
 
 Route::get('/admin', function () {

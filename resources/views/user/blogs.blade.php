@@ -10,7 +10,7 @@
 
 <div class="content">
     <div class="content-container">
-        <div class="content-left">
+        <div class="content-left ">
             <h1 class="search">SEARCH</h1>
             <div class="search_box">
                 <form action="/blog" >
